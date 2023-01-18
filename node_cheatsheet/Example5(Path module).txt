@@ -1,0 +1,52 @@
+//path module
+
+The path module in Node.js provides an API for working with file and directory paths. Here are some examples of how you can use the path module to manipulate file paths:
+
+Joining paths:
+//index.js
+const path = require('path');
+
+const dir1 = 'path/to/dir1';
+const dir2 = 'path/to/dir2';
+
+const joinedPath = path.join(dir1, dir2);
+console.log(joinedPath);
+In this example, the path.join() function is used to join the two directory names "path/to/dir1" and "path/to/dir2" together, and the result is '/path/to/dir1/path/to/dir2'.
+
+Resolving paths:
+//index.js
+const path = require('path');
+
+const filePath = path.resolve('path/to/file.txt');
+console.log(filePath);
+In this example, the path.resolve() function is used to resolve the file path 'path/to/file.txt' to an absolute path, and the result is '/path/to/file.txt'
+
+Extracting the file name:
+//index.js
+const path = require('path');
+
+const filePath = '/path/to/file.txt';
+const fileName = path.basename(filePath);
+console.log(fileName);
+In this example, the path.basename() function is used to extract the file name 'file.txt' from the file path '/path/to/file.txt'
+
+Extracting the extension:
+//index.js
+const path = require('path');
+
+const filePath = '/path/to/file.txt';
+const fileExt = path.extname(filePath);
+console.log(fileExt);
+In this example, the path.extname() function is used to extract the extension '.txt' from the file path '/path/to/file.txt'
+
+These are some of the basic examples of how you can use the path module to manipulate file paths. The path module has many other functions that can be used to perform various operations such as normalizing, parsing, etc. You can find more information about the path module in the Node.js documentation, which can be found at https://nodejs.org/api/path.html
+
+--------------------------------------------------------------------------------------------------------------------------
+References to learn Node.js:
+Node.js official documentation (https://nodejs.org/en/docs/)
+Node.js API documentation (https://nodejs.org/api/)
+"Node.js in Action" by Mike Cantelon, Marc Harter, T.J. Holowaychuk, Nathan Rajlich (http://www.manning.com/cantelon/)
+"Node.js the Right Way" by Jim R. Wilson (https://pragprog.com/book/jwnode/node-js-the-right-way)
+"Professional Node.js" by Pedro Teixeira (https://www.wrox.com/node-js/)
+FreeCodeCamp (https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/node-js/)
+------------------------------------------------------------------------------------------------------------------

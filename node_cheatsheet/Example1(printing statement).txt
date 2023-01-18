@@ -1,0 +1,22 @@
+//printing statemmt 
+                        (print hello world in node)
+//index.js 
+console.log("Hello, World!");
+                                            ------------------
+You can run this code by saving it in a file with a .js extension and then running the file using the command node <filename>.js in the terminal.
+You can also use console.info, console.error and console.warn to print the message with different styles and it will be visible in the console with different color.
+                                            ---------------
+You can also use process.stdout.write() function to print the message in the console.
+//index.js
+process.stdout.write("Hello, World!");
+This will print the "Hello, World!" message in the console.
+Please note that these methods of printing are only visible when running the code via the command line, not in a web browser
+--------------------------------------------------------------------------------------------------------------------------
+References to learn Node.js:
+Node.js official documentation (https://nodejs.org/en/docs/)
+Node.js API documentation (https://nodejs.org/api/)
+"Node.js in Action" by Mike Cantelon, Marc Harter, T.J. Holowaychuk, Nathan Rajlich (http://www.manning.com/cantelon/)
+"Node.js the Right Way" by Jim R. Wilson (https://pragprog.com/book/jwnode/node-js-the-right-way)
+"Professional Node.js" by Pedro Teixeira (https://www.wrox.com/node-js/)
+FreeCodeCamp (https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/node-js/)
+------------------------------------------------------------------------------------------------------------------

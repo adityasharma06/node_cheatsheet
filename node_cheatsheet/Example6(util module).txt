@@ -1,0 +1,46 @@
+The util module in Node.js provides a set of utility functions for a variety of tasks. Here are some examples of how you can use the util module:
+
+util.format(): This function is used to format a string similar to the way the printf() function in C works.
+                                                  ---------------------------
+//index.js
+const util = require('util');
+console.log(util.format('%s:%s', 'foo', 'bar'));
+util.promisify(): This function is used to convert a callback-based function to a promise-based function.
+                                                -------------------------------
+//index.js
+const util = require('util');
+const fs = require('fs');
+const readFile = util.promisify(fs.readFile);
+readFile('path/to/file.txt', 'utf8')
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+util.inspect(): This function is used to return a string representation of an object, suitable for debugging.
+                                                 ------------------------------
+//index.js
+const util = require('util');
+const obj = { name: 'John', age: 30 };
+console.log(util.inspect(obj, { depth: null }));
+util.isArray(): This function is used to check if a given value is an Array or not.
+                                                --------------------------------
+//index.js
+const util = require('util');
+console.log(util.isArray([1, 2, 3])); // true
+console.log(util.isArray({ name: 'John', age: 30 })); // false
+util.isRegExp(): This function is used to check if a given value is a RegExp or not.
+                                              -----------------------------------
+//index.js
+const util = require('util');
+console.log(util.isRegExp(/^[a-z]+$/)); // true
+console.log(util.isRegExp('^[a-z]+$')); // false
+                                          -----------------------------
+These are just a few examples of how you can use the util module in Node.js. The util module provides many more functions that can be used for different tasks. You can find more information about the util module in the Node.js documentation, which can be found at https://nodejs.org/api/util.html
+
+--------------------------------------------------------------------------------------------------------------------------
+References to learn Node.js:
+Node.js official documentation (https://nodejs.org/en/docs/)
+Node.js API documentation (https://nodejs.org/api/)
+"Node.js in Action" by Mike Cantelon, Marc Harter, T.J. Holowaychuk, Nathan Rajlich (http://www.manning.com/cantelon/)
+"Node.js the Right Way" by Jim R. Wilson (https://pragprog.com/book/jwnode/node-js-the-right-way)
+"Professional Node.js" by Pedro Teixeira (https://www.wrox.com/node-js/)
+FreeCodeCamp (https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/node-js/)
+------------------------------------------------------------------------------------------------------------------

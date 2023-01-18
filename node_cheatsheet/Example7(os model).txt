@@ -1,0 +1,63 @@
+//os module: 
+The os module in Node.js provides an API for getting information about the operating system. Here are some examples of how you can use the os module:
+
+* os.hostname(): This function returns the hostname of the operating system.
+//index.js
+const os = require('os');
+console.log(os.hostname());
+                                                         ------------------
+* os.type(): This function returns the operating system name.
+//index.js
+const os = require('os');
+console.log(os.type());
+                                                         ------------------
+* os.platform(): This function returns the operating system platform.
+//index.js
+const os = require('os');
+console.log(os.platform());
+                                                         ------------------
+* os.arch(): This function returns the operating system architecture.
+//index.js
+const os = require('os');
+console.log(os.arch());
+                                                         ------------------
+* os.release(): This function returns the operating system release.                                                         ------------------
+//index.js
+const os = require('os');
+console.log(os.release());
+                                                         ------------------
+* os.uptime(): This function returns the system uptime in seconds.                                                         ------------------
+//index.js
+const os = require('os');
+console.log(os.uptime());
+                                                         ------------------
+* os.loadavg(): This function returns an array containing the 1, 5, and 15 minute load averages.
+
+//index.js
+const os = require('os');
+console.log(os.loadavg());
+                                                         ------------------
+* os.totalmem(): This function returns the total amount of system memory in bytes.
+
+//index.js
+const os = require('os');
+console.log(os.totalmem());
+                                                         ------------------
+* os.freemem(): This function returns the amount of free system memory in bytes.
+
+//index.js
+const os = require('os');
+console.log(os.freemem());
+                                                         ------------------
+
+These are some of the basic examples of how you can use the os module to get information about the operating system. The os module has many other functions that can be used to get other information like CPU architecture, endianness, and environment variables. You can find more information about the os module in the Node.js documentation, which can be found at https://nodejs.org/api/os.html
+
+--------------------------------------------------------------------------------------------------------------------------
+References to learn Node.js:
+Node.js official documentation (https://nodejs.org/en/docs/)
+Node.js API documentation (https://nodejs.org/api/)
+"Node.js in Action" by Mike Cantelon, Marc Harter, T.J. Holowaychuk, Nathan Rajlich (http://www.manning.com/cantelon/)
+"Node.js the Right Way" by Jim R. Wilson (https://pragprog.com/book/jwnode/node-js-the-right-way)
+"Professional Node.js" by Pedro Teixeira (https://www.wrox.com/node-js/)
+FreeCodeCamp (https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/node-js/)
+------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,37 @@
+//fsmodule
+The fs (File System) module in Node.js provides an API for interacting with the file system. Here's an example of how you can use the fs module to read the contents of a file and print it to the console:
+
+//index.js
+const fs = require('fs');
+
+fs.readFile('path/to/file.txt', 'utf8', (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
+
+In this example, the fs.readFile() function is used to read the contents of the file located at "path/to/file.txt". The second argument passed to the function, 'utf8', specifies that the file should be read as a UTF-8 encoded text file. The function takes a callback which has two arguments, the first one is error and the second one is data.
+
+Here is another example that writes data to a file using the fs.writeFile() function:
+
+//index.js
+const fs = require('fs');
+
+const data = "This is some data that will be written to a file.";
+
+fs.writeFile('path/to/file.txt', data, (err) => {
+  if (err) throw err;
+  console.log('The file has been saved!');
+});
+In this example, the fs.writeFile() function is used to write the "data" string to the file located at "path/to/file.txt".
+The function takes a callback function which will get executed after the writing is done, it will have error as an argument.
+
+Please note that these examples uses synchronous version of the function, it's not recommended to use them in production environment as they block the event loop. You can use the asynchronous version of these functions like fs.promises.readFile() and fs.promises.writeFile() with async/await to handle the file system operations.
+--------------------------------------------------------------------------------------------------------------------------
+References to learn Node.js:
+Node.js official documentation (https://nodejs.org/en/docs/)
+Node.js API documentation (https://nodejs.org/api/)
+"Node.js in Action" by Mike Cantelon, Marc Harter, T.J. Holowaychuk, Nathan Rajlich (http://www.manning.com/cantelon/)
+"Node.js the Right Way" by Jim R. Wilson (https://pragprog.com/book/jwnode/node-js-the-right-way)
+"Professional Node.js" by Pedro Teixeira (https://www.wrox.com/node-js/)
+FreeCodeCamp (https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/node-js/)
+------------------------------------------------------------------------------------------------------------------

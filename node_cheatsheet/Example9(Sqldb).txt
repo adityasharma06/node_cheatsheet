@@ -1,0 +1,67 @@
+//sql database
+
+To connect to a MySQL database and read information in a form and print it on the next page using Express, you will need to use a library like mysql2 or sequelize. Here's an example of how you can use the mysql2 library to connect to a MySQL database and perform a query to retrieve data from a table:
+
+//index.js
+const express = require('express');
+const mysql = require('mysql2');
+const app = express();
+
+// Connect to MySQL
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'password',
+    database: 'mydb'
+});
+
+connection.connect();
+
+app.use(express.urlencoded({ extended: true }));
+
+app.get('/', (req, res) => {
+    res.send(`
+        <form action="/users" method="post">
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="age" placeholder="Age">
+            <input type="submit" value="Submit">
+        </form>
+    `);
+});
+
+app.post('/users', (req, res) => {
+    const name = req.body.name;
+    const age = req.body.age;
+    const sql = `INSERT INTO users (name, age) VALUES ('${name}', ${age})`;
+    connection.query(sql, (err, results) => {
+        if (err) throw err;
+        res.redirect('/users');
+    });
+});
+
+app.get('/users', (req, res) => {
+    const sql = 'SELECT * FROM users';
+    connection.query(sql, (err, results) => {
+        if (err) throw err;
+        res.send(results);
+    });
+});
+
+app.listen(3000, () => {
+    console.log('Server started on port 3000');
+});
+In this example, we use the mysql2 library to create a connection to the MySQL database. We also use the express.urlencoded() middleware to parse the form data that is sent as part of a POST request.
+
+We create a form on the root route '/' where users can input their name and age. When the form is submitted, it makes a post request to '/users' route where we insert name and age in the mysql table 'users'. When the insertion is successful, we redirect the user to '/users' route where the data of all the rows in the table 'users' is retrieved and sent to the client.
+
+Please note that this is just a simple example, and in a production environment, you should use a connection pool and handle errors properly
+
+--------------------------------------------------------------------------------------------------------------------------
+References to learn Node.js:
+Node.js official documentation (https://nodejs.org/en/docs/)
+Node.js API documentation (https://nodejs.org/api/)
+"Node.js in Action" by Mike Cantelon, Marc Harter, T.J. Holowaychuk, Nathan Rajlich (http://www.manning.com/cantelon/)
+"Node.js the Right Way" by Jim R. Wilson (https://pragprog.com/book/jwnode/node-js-the-right-way)
+"Professional Node.js" by Pedro Teixeira (https://www.wrox.com/node-js/)
+FreeCodeCamp (https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/node-js/)
+------------------------------------------------------------------------------------------------------------------

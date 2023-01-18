@@ -1,0 +1,39 @@
+//http protocol 
+
+Here's an example of a simple Node.js script that creates an HTTP server on localhost and responds to incoming requests by sending back an HTML document that contains the text "Hello, World!" in an H1 tag:
+//index.js 
+
+const http = require('http');
+const hostname = '127.0.0.1';
+const port = 3000;
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/html');
+  res.end(`<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello, World!</title>
+</head>
+<body>
+  <h1>Hello, World!</h1>
+</body>
+</html>`);
+});
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+}); 
+                                -----------
+You will need to run this code on your local machine with Node.js installed.
+You can run the script using the command node script.js in the terminal,
+then you can open a web browser and go to "http://127.0.0.1:3000" to see the output.
+Please note that you can change the hostname, port and message as per your requirement.
+
+--------------------------------------------------------------------------------------------------------------------------
+References to learn Node.js:
+Node.js official documentation (https://nodejs.org/en/docs/)
+Node.js API documentation (https://nodejs.org/api/)
+"Node.js in Action" by Mike Cantelon, Marc Harter, T.J. Holowaychuk, Nathan Rajlich (http://www.manning.com/cantelon/)
+"Node.js the Right Way" by Jim R. Wilson (https://pragprog.com/book/jwnode/node-js-the-right-way)
+"Professional Node.js" by Pedro Teixeira (https://www.wrox.com/node-js/)
+FreeCodeCamp (https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/node-js/)
+------------------------------------------------------------------------------------------------------------------
